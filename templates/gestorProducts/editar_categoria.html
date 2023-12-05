@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Editar Categoría</h2>
+  <form method="post" action="{% url 'editar_categoria' categoria.id %}">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ categoria.nombre }}" required>
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'listar_categorias' %}">Volver al listado de categorías</a>
+{% endblock %}

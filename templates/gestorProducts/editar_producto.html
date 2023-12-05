@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Editar Producto</h2>
+  <form method="post" action="{% url 'editar_producto' producto.id %}">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ producto.nombre }}" required>
+    <label for="descripcion">Descripción:</label>
+    <textarea name="descripcion" required>{{ producto.descripcion }}</textarea>
+    <label for="categoria">Categoría:</label>
+    <select name="categoria" required>
+      {% for categoria in categorias %}
+        <option value="{{ categoria.id }}" {% if categoria.id == producto.categoria.id %}selected{% endif %}>{{ categoria.nombre }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'listar_productos' %}">Volver al listado de productos</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+CREDENCIALES
+
+
+
+
+ADMINISTRADORES:
+
+usuario: admin
+password: 12345
+
+
+
+
+USUARIOS:
+
+usuario: 
+password: 
