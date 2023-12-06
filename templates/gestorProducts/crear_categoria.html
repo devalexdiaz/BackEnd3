@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Crear Nueva Categoría</h2>
-  <form method="post" action="{% url 'crear_categoria' %}">
-    {% csrf_token %}
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" required>
-    <button type="submit">Guardar</button>
-  </form>
-  <a href="{% url 'listar_categorias' %}">Volver al listado de categorías</a>
+  <div class="container mt-4">
+    <h2>Crear Nueva Categoría</h2>
+    <form method="post" action="{% url 'crear_categoria' %}" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a href="{% url 'listar_categorias' %}" class="btn btn-secondary ml-2">Volver al listado de categorías</a>
+    </form>
+  </div>
 {% endblock %}

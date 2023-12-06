@@ -1,32 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Listado de Productos</h2>
-  <table id="productosTable" class="display">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Categoría</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for producto in productos %}
+  <div class="container mt-4">
+    <h2>Listado de Productos</h2>
+    <table id="productosTable" class="table table-striped table-bordered">
+      <thead>
         <tr>
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.descripcion }}</td>
-          <td>{{ producto.categoria.nombre }}</td>
-          <td>
-            <a href="{% url 'editar_producto' producto.id %}" class="btn btn-warning">Editar</a>
-            
-          </td>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Categoría</th>
+          <th>Acciones</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <a href="{% url 'crear_producto' %}" class="btn btn-success">Crear nuevo producto</a>
-  
+      </thead>
+      <tbody>
+        {% for producto in productos %}
+          <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.categoria.nombre }}</td>
+            <td>
+              <a href="{% url 'editar_producto' producto.id %}" class="btn btn-warning">Editar</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url 'crear_producto' %}" class="btn btn-success">Crear nuevo producto</a>
+  </div>
+
   <script>
     $(document).ready(function() {
       $('#productosTable').DataTable();

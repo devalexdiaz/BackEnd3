@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Crear Nuevo Producto</h2>
-  <form method="post" action="{% url 'crear_producto' %}">
-    {% csrf_token %}
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" required>
-    <label for="descripcion">Descripción:</label>
-    <textarea name="descripcion" required></textarea>
-    <label for="categoria">Categoría:</label>
-    <select name="categoria" required>
-      {% for categoria in categorias %}
-        <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
-      {% endfor %}
-    </select>
-    <button type="submit">Guardar</button>
-  </form>
-  <a href="{% url 'listar_productos' %}">Volver al listado de productos</a>
+  <div class="container mt-4">
+    <h2>Crear Nuevo Producto</h2>
+    <form method="post" action="{% url 'crear_producto' %}" class="form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" class="form-control" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" class="form-control" required>
+          {% for categoria in categorias %}
+            <option value="{{ categoria.id }}">{{ categoria.nombre }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="d-flex">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="mx-2"></div>
+        <a href="{% url 'listar_productos' %}" class="btn btn-secondary">Volver al listado de productos</a>
+      </div>
+    </form>
+  </div>
 {% endblock %}
