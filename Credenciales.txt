@@ -1,17 +1,32 @@
+
+
+EL ARCHIVO "prueba3.sql" es la importacion de al base de
+datos con los usuarios y productos creados 
+
+
+
+
 CREDENCIALES
-
-
 
 
 ADMINISTRADORES:
 
 usuario: admin
-password: 12345
+password: admin12345
 
 
 
 
 USUARIOS:
 
-usuario: 
-password: 
+usuario: user1
+password: usuario12345
+
+
+
+usuario: user2
+password: usuario12345
+
+
+
+

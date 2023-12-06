@@ -1,26 +1,54 @@
 {% extends "../base.html" %}
 
-{% block title %}Dashboard{% endblock %}
+{% block title %}Dashboard - Usuario{% endblock %}
 
 {% block content %}
-  <div class="container mt-4">
-    <h2 class="mb-4">Dashboard - Usuario</h2>
-    
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Productos</h5>
-            <p class="card-text">Gestiona los productos que has creado en esta sección</p>
-            <a href="{% url 'listar_productos' %}" class="btn btn-primary">Ver Productos</a>
-          </div>
+<div class="container-fluid mt-4">
+
+    <h2 class="mb-4 text-center">Dashboard - Usuario</h2>
+
+    <div class="row w-100">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">¡Bienvenido a tu Dashboard!</h5>
+                    <p class="card-text">
+                        Aquí puedes gestionar los productos que has creado.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-
-
     </div>
 
-    <!-- Puedes agregar más contenido aquí, como gráficos o tablas -->
+    <div class="row mt-4">
+        <div class="col-md-6 mx-auto d-flex justify-content-center">
+            <div class="card text-center p-5" style="margin: 20px 0;">
+                <div class="card-body">
+                    <h5 class="card-title">Tus Productos</h5>
+                    <p class="card-text">Gestiona los productos que has creado en esta sección</p>
+                    <a href="{% url 'listar_productos' %}" class="btn btn-primary">Ver Productos</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Misión y Visión</h5>
+                    <p class="card-text">
+                        Nuestra misión es proporcionar cuidado y atención de calidad a las mascotas, manteniendo su bienestar y felicidad. Buscamos ser la mejor opción para los amantes de los animales, ofreciendo servicios excepcionales y productos especializados.
+                    </p>
+                    <p class="card-text">
+                        Nuestra visión es ser reconocidos como líderes en el cuidado de mascotas, contribuyendo a una comunidad de animales felices y saludables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock %}
+
+
